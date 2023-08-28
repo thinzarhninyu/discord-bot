@@ -7,6 +7,7 @@ load_dotenv()
 
 def create_intents():
     intents = discord.Intents.default()
+    intents.message_content = True
     return intents
 
 async def send_message(message, user_message, is_private):
@@ -18,8 +19,7 @@ async def send_message(message, user_message, is_private):
         
 def run_discord_bot():
     TOKEN = os.getenv('TOKEN') 
-    intents = create_intents()
-    client = discord.Client(intents = intents)
+    client = discord.Client(intents = create_intents())
     
     @client.event
     async def on_ready():
