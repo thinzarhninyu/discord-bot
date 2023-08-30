@@ -1,13 +1,12 @@
+import database
+
+responses = database.fetch_responses()
+
 def handle_response(message) -> str:
     p_message = message.lower()
     
-    if p_message == 'test':
-        return 'testing 1 2 3'
-    
-    if p_message == 'hello':
-        return 'yo sup'
-    
-    if p_message == 'nice to meet you':
-        return 'good to see you too!'
+    for response in responses:
+        if response[1] == p_message:  
+            return response[2]
     
     return 'huh?'
