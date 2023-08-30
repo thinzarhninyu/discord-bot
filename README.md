@@ -6,6 +6,5 @@
 
 
 ### in-progress
-- integrate database for conversation bot to widen the scope
 - music bot (spotify/youtube)
 - welcome bot to onboard users when they first join the server
